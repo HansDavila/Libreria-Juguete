@@ -1,5 +1,5 @@
 # Libreria-Juguete
-Esta es una libreria que hace uso el proyecto de MVCStore para manejar los registros
+Esta es una libreria que hace uso el proyecto de [MVC Store](https://github.com/HansDavila/MVCStore) para manejar los registros
 
 Esta libreria sirve como intermediario entre el proyecto MVC y  otra libreria llamada "LibreriaRecursos" siendo en esta ultima donde se modifican los archivos de texto
 
@@ -16,7 +16,12 @@ Acciones mas especificas como:
 * Obtenener el tamaños de los Registros
 * Obtener el ultimo juguete de los registros
 
-Acciones que interactuan con una fuente de datos (en este caso un archivo de texto):
+Acciones que interactuan con una fuente de datos (en este caso un archivo de texto) :
 * Actualizar registros
 * Leer registros directamente de la fuente
+
+Enlaces de repositorios:
+*  MVC Store -> [Clic aqui](https://github.com/HansDavila/MVCStore).
+*  Libreria recursos -> [Clic aqui](https://github.com/HansDavila/Libreria-Recursos).
+
 
