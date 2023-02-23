@@ -1,0 +1,5 @@
+1,Casa Muñeca,300.0,Mattel,Niña,100
+2,Transformers,600.0,Hasbro,Accion,20
+3,Barbies,600.0,Matel,Muñeca,40
+4,Lego Batman,1200.0,Lego,Construccion,55
+5,Xbox,13000.0,Microsoft,Videojuego,4
