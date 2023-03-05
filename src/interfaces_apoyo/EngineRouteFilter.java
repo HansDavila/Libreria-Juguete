@@ -1,10 +1,7 @@
-package interfacesEngine;
+package interfaces_apoyo;
 
+public interface EngineRouteFilter<T> extends GeneralFilter<T> {
 
-
-public interface FiltroEngineRoute<T> extends FiltroGeneral
-{
-	
 	public abstract void readRegistrosFile();
 	public abstract void updateRegistroFile();
 	public abstract void createFile();

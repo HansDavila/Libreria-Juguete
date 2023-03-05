@@ -1,6 +1,8 @@
 package jugueteria;
 
-public class Juguete {
+import interfaces_apoyo.Registro;
+
+public class Juguete implements Registro {
 	// Propiedades de Clase
 	private int id_jug;
 	private String nom_jug;
@@ -21,6 +23,12 @@ public class Juguete {
 		this.prov_jug = prov_jug;
 		this.stock_jug = stock_jug;
 	}
+	
+	public Juguete() {
+		
+	}
+	
+
 
 	// GETTERS Y SETTERS
 	public int getId_jug() {
@@ -84,6 +92,21 @@ public class Juguete {
 		return id_jug + "," + nom_jug + "," + pre_jug + "," + marc_jug + "," + catg_jug + "," + prov_jug + "," + stock_jug  +"\n";
 	}
 
-	
+	@Override
+	public void parseLineaActual(String[] lineaActual) {
+		try {
+			this.id_jug = Integer.parseInt(lineaActual[0]);
+	        this.nom_jug = lineaActual[1];
+	        this.pre_jug = Float.parseFloat(lineaActual[2]);
+	        this.marc_jug = lineaActual[3];
+	        this.catg_jug = Integer.parseInt(lineaActual[4]);
+	        this.prov_jug = Integer.parseInt(lineaActual[5]);
+	        this.stock_jug = Integer.parseInt(lineaActual[6]);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+        
+    }
+
 
 }
