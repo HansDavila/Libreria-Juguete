@@ -6,18 +6,20 @@ public class Juguete {
 	private String nom_jug;
 	private float pre_jug;
 	private String marc_jug;
-	private String catg_jug;
-	private int stock;
+	private int catg_jug;
+	private int prov_jug;
+	private int stock_jug;
 
 	// CONSTRUCTOR
-	public Juguete(int id_jug, String nom_jug, float pre_jug, String marc_jug, String catg_jug, int stock) {
+	public Juguete(int id_jug, String nom_jug, float pre_jug, String marc_jug, int catg_jug, int prov_jug, int stock_jug) {
 		super();
 		this.id_jug = id_jug;
 		this.nom_jug = nom_jug;
 		this.pre_jug = pre_jug;
 		this.marc_jug = marc_jug;
 		this.catg_jug = catg_jug;
-		this.stock = stock;
+		this.prov_jug = prov_jug;
+		this.stock_jug = stock_jug;
 	}
 
 	// GETTERS Y SETTERS
@@ -53,26 +55,35 @@ public class Juguete {
 		this.marc_jug = marc_jug;
 	}
 
-	public String getCatg_jug() {
+	public int getCatg_jug() {
 		return catg_jug;
 	}
 
-	public void setCatg_jug(String catg_jug) {
+	public void setCatg_jug(int catg_jug) {
 		this.catg_jug = catg_jug;
 	}
 
-	public int getStock() {
-		return stock;
+	public int getStock_jug() {
+		return stock_jug;
 	}
 
 	public void setStock(int stock) {
-		this.stock = stock;
+		this.stock_jug = stock;
 	}
 	
-	
+	public int getProv_jug() {
+		return prov_jug;
+	}
+
+	public void setProv_jug(int prov_jug) {
+		this.prov_jug = prov_jug;
+	}
+		
 	// Sobreescribiendo Metodo
 	public String toString() {
-		return id_jug + "," + nom_jug + "," + pre_jug + "," + marc_jug + "," + catg_jug + "," +  stock  +"\n";
+		return id_jug + "," + nom_jug + "," + pre_jug + "," + marc_jug + "," + catg_jug + "," + prov_jug + "," + stock_jug  +"\n";
 	}
+
+	
 
 }

@@ -30,7 +30,7 @@ public class Jugueteria extends JugueteriaCRUD implements FiltroEngineRoute, Fil
 
 	
 	//---------------------------METODOS GENERALES---------------------------
-	
+		
 	//Obtener juguete
 	public Juguete getJuguete(int index) 
 	{
@@ -153,14 +153,16 @@ public class Jugueteria extends JugueteriaCRUD implements FiltroEngineRoute, Fil
 					
 				}else {
 					
-					String[] lineaActual = item.split(",");										
-					Registros.add(new Juguete(Integer.parseInt(lineaActual[0]), lineaActual[1], Float.parseFloat(lineaActual[2]), lineaActual[3], lineaActual[4], Integer.parseInt(lineaActual[5])));
+					String[] lineaActual = item.split(",");		
+					//Juguete -> [id || int] [nombre || String] [precio || Float] [marca || string] [categoria || int] [proveedor || proveedor] [stock || int]
+					Registros.add(new Juguete(Integer.parseInt(lineaActual[0]), lineaActual[1], Float.parseFloat(lineaActual[2]), lineaActual[3], Integer.parseInt(lineaActual[4]), Integer.parseInt(lineaActual[5]), Integer.parseInt(lineaActual[6])));
 				}
 					
 			}
 				
 		} catch (NumberFormatException e) {
 			// TODO: handle exception
+			System.out.println("ERROR ->"  + e.getMessage());
 			System.out.println("File Vacio");
 		}			
 	}
@@ -220,7 +222,7 @@ public class Jugueteria extends JugueteriaCRUD implements FiltroEngineRoute, Fil
 					String[] lineaActual = item.split(",");
 					System.out.println("[A] -> " + item);
 					//System.out.println("Añadido");
-					Registros.add(new Juguete(Integer.parseInt(lineaActual[0]), lineaActual[1], Float.parseFloat(lineaActual[2]), lineaActual[3], lineaActual[4], Integer.parseInt(lineaActual[5])));
+					Registros.add(new Juguete(Integer.parseInt(lineaActual[0]), lineaActual[1], Float.parseFloat(lineaActual[2]), lineaActual[3], Integer.parseInt(lineaActual[4]), Integer.parseInt(lineaActual[5]), Integer.parseInt(lineaActual[6])));
 				}
 					
 			}
