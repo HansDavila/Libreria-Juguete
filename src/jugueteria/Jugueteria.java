@@ -1,5 +1,7 @@
 package jugueteria;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -37,6 +39,30 @@ public class Jugueteria extends JugueteriaCRUD implements FiltroEngineRoute, Fil
 		return Registros.get(index);		
 	}
 	
+	public <T> void usandoReflection(T bean) 
+	{
+		Method[] metodos = bean.getClass().getMethods();		
+		String get = "get";
+		
+		for(Method m: metodos)
+		{
+			if(m.getName().contains(get) && m.getName().contains("_vid")) 
+			{
+				if(!m.getName().equals("getClass")) 
+				{
+					try {
+						System.out.print(m.invoke(bean, null) + ", " );
+						
+					} catch (IllegalAccessException | InvocationTargetException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		
+		System.out.println();
+	}
 	
 	//Obtener el ultimo juguete
 	public Juguete getLastToy() 
@@ -87,6 +113,11 @@ public class Jugueteria extends JugueteriaCRUD implements FiltroEngineRoute, Fil
 		}
 	}
 	
+	//Metodo que devuelve la lista de los registros
+	public ArrayList<Juguete> getRegistrosList(){
+		return Registros;		
+	}
+	
 	
 	
 	//---------------------------METODOS CRUD---------------------------
@@ -108,7 +139,7 @@ public class Jugueteria extends JugueteriaCRUD implements FiltroEngineRoute, Fil
 		}
 		
 	}
-	
+		
 	//Modificar juguetes del Arraylist Registros
 	public void modifyToy(int index, Juguete modifiedToy) 
 	{

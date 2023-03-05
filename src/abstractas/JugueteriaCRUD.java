@@ -18,4 +18,6 @@ public abstract class JugueteriaCRUD implements FiltroEngineRoute, FiltroEngineU
 	
 	public abstract void addToy(Juguete toy);
 	
+	
+	
 }
